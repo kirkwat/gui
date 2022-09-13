@@ -5,60 +5,105 @@
     <link rel="stylesheet" href="lib/style.css" />
   </head>
   <body>
-    <h1>Students</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Student</th>
-          <th>Dept</th>
-          <th>Class</th>
-          <th>Grade</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Jill</td>
-          <td>CS</td>
-          <td>3345</td>
-          <td>A</td>
-        </tr>
-        <tr>
-          <td>John</td>
-          <td>CS</td>
-          <td>3330</td>
-          <td>B</td>
-        </tr>
-        <tr>
-          <td>Jill</td>
-          <td>CS</td>
-          <td>3310</td>
-          <td>C</td>
-        </tr>
-      </tbody>
-    </table>
-    <form>
-      <div class="form-field required">
-        <label for="studentName">Student Name</label>
-        <input type="text" id="studentName" name="studentName" />
-      </div>
-      <div class="form-field">
-        <label for="department">Department</label>
-        <select type="text" id="department" name="department">
-          <option></option>
-          <option>Computer Science</option>
-          <option>Engineering</option>
-          <option>Data Science</option>
-        </select>
-      </div>
-      <div class="form-field">
-        <label>Grade</label>
-        <div class="radio">
-          <label> <input type="radio" id="grade_A" name="grade" />A</label>
-          <label> <input type="radio" id="grade_B" name="grade" />B</label>
-          <label> <input type="radio" id="grade_C" name="grade" />C</label>
+    <header>
+      <h1>My Personal Website</h1>
+    </header>
+    <main>
+      <aside>
+        <img src="avatar.jpg" alt="Kirk Watson Avatar"/>
+        <h1>Kirk Watson</h1>
+        <h2>Undergraduate Student</h2>
+        <a href="https://www.smu.edu/">Southern Methodist University</a>
+      </aside>
+      <article>
+        <h2>About Me</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div>
+          <h4>Career Interests:</h4>
+          <ul>
+            <li>Software Development</li>
+            <li>Cyber Security</li>
+            <li>Artificial Intelligence</li>
+            <li>Cryptocurrencies</li>
+          </ul>
         </div>
-      </div>
-      <button type="button">Submit</button>
-    </form>
+      </article>
+      <section>
+        <h2>These are the classes that I am taking this semester.</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Course Name</th>
+              <th>Professor</th>
+              <th>Department</th>
+              <th>Class Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Programming Languages</td>
+              <td>Isaac Chow</td>
+              <td>CS</td>
+              <td>3342</td>
+            </tr>
+            <tr>
+              <td>Graphical User Interface</td>
+              <td>John Lawrimore</td>
+              <td>CS</td>
+              <td>3345</td>
+            </tr>
+            <tr>
+              <td>Digital Computer Design</td>
+              <td>Theodore Manikas</td>
+              <td>CS</td>
+              <td>4381</td>
+            </tr>
+            <tr>
+              <td>Artificial Intelligence</td>
+              <td>Michael Hahsler</td>
+              <td>CS</td>
+              <td>5320</td>
+            </tr>
+            <tr>
+              <td>Machine Learning</td>
+              <td>Eric Larson</td>
+              <td>CS</td>
+              <td>5324</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <form>
+        <h2>Contact me!</h2>
+        <div class="form-field required">
+          <label for=userName>Name</label>
+          <input type="text" id="userName" name="userName" />
+        </div>
+        <div class="form-field required">
+          <label for="userEmail">Email</label>
+          <input type="text" id="userEmail" name="userEmail" />
+        </div>
+        <div class="form-field required">
+          <label for="message">Message</label>
+          <input type="text" id="message" name="message" />
+        </div>
+        <div class="form-field">
+          <label for="role">Role</label>
+          <select type="text" id="role" name="role">
+            <option></option>
+            <option>Peer</option>
+            <option>Professor</option>
+            <option>Job Recruiter</option>
+          </select>
+        </div>
+        <button type="button">Submit</button>
+      </form>
+    </main>
+    <footer>
+      <h3>Developed and maintained by Kirk Watson</h3>
+      <h4>All Rights Reserved.</h4>
+    </footer>
   </body>
 </html>
