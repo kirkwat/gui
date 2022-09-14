@@ -3,17 +3,44 @@
 }
 
 body {
-  margin: 0;
-  margin-top: 1.25rem;
+  margin: 0px;
 }
 
-#avatar-image {
-  max-width: 200px;
+main {
+  margin-top: 70px;
 }
 
-.banner-image {
-  position: relative;
-  z-index: -1;
+/* header and footer */
+
+header, footer {
+  padding: 16px;
+  background-color: rgb(0, 140, 255);
+  color: white;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+footer {
+  text-align: center;
+}
+
+header h1 {
+  margin: 0px;
+}
+
+/* profile */
+
+aside {
+  margin: 3rem;
+}
+
+.float-right {
+  float: right;
 }
 
 a {
@@ -24,71 +51,16 @@ a[href*="edu"] {
   color: grey;
 }
 
-/* form */
-
-.form-field {
-  margin-bottom: 1rem;
-  max-width: 500px;
-}
-
-.form-field > label {
-  display: block;
-}
-
-.form-field input:not([type=radio]),
-.form-field select {
-  width: 100%;
-  padding: .4rem .6rem;
-  border: solid 1px #555;
-  background: #ffaa;
-}
-
-form button {
-  background: darkcyan;
-  color: white;
-  border: none;
-  padding: .5rem 1.5rem;
-  width: 100%;
-}
-
-form button:hover {
-  background: darkgreen;
-}
-
-.radio label {
-  margin-right: 1rem;
-}
-
-.required > label::after {
-  content: '*';
-  color: red;
-  margin-left: .5rem;
-  font-weight: bold;
-}
-
-/* table */
-
-table {
-  width: 100%;
-  table-layout: fixed;
-  border-spacing: 0;
-  margin-bottom: 2rem;
-}
-
-th {
-  text-align: left;
-  background: #555;
-  color: #FFF;
-}
-
-th, td {
-  padding: .4rem .6rem;
-}
-  
 /* image */
 
-.rounded {
-  border-radius: 10rem;
+#avatar-image {
+  max-width: 200px;
+}
+
+.rounded.banner-image {
+  position: relative;
+  z-index: -1;
+  border-radius: 50%;
 }
 
 .no-overflow {
@@ -97,26 +69,32 @@ th, td {
 
 .float-left {
   float: left;
-  margin-left: rem;
-  margin-bottom: 1rem;
 }
 
 .center {
   text-align: center;
 }
 
-/* DELETE */
-.float-right {
-  float: right;
-  margin: 5rem;
-  padding: 5rem;
+/* about me */
+
+article {
+  margin-right: 3rem;
 }
 
-.clear {
-  clear: both;
+.about-title {
+  margin-top: 0px;
+  padding-top: 3rem;
 }
 
-/* interests */
+.interests {
+  margin: .25rem;
+}
+
+.degrees {
+  margin: .25rem;
+  padding-top: 1rem;
+}
+
 ul {
   margin: .25rem;
 }
@@ -124,4 +102,93 @@ ul {
 li {
   list-style-position:inside;
   margin-right: 1rem;
+}
+
+/* course section and table*/
+
+.clear {
+  clear: both;
+}
+
+.secondary {
+  background-color: lightgrey;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.secondary h2{
+  margin-bottom: 3rem;
+}
+
+table {
+  table-layout: fixed;
+  border-spacing: 0;
+  border: .5px solid;
+  margin-bottom: 2rem;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+th {
+  text-align: left;
+  background: #555;
+  opacity: .75;
+  color: #FFF;
+}
+
+th, td {
+  border: 1px solid;
+  padding: .4rem .6rem;
+}
+
+/* form */
+
+.contact {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact h2{
+  text-align: center;
+}
+
+.form-field {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.form-field > label {
+  display: block;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  padding: .4rem .6rem;
+  border: solid 1px #555;
+  background: rgb(236, 236, 236);
+}
+
+form button {
+  background: white;
+  color: blue;
+  border: solid 1px blue;
+  padding: .5rem 1.5rem;
+  width: 100%;
+}
+
+form button:hover {
+  background: blue;
+  color: white;
+}
+
+.required > label::after {
+  content: '*';
+  color: red;
+  margin-left: .5rem;
 }
