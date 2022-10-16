@@ -6,15 +6,101 @@ main > :not(section.active) {
     display: none;
 }
 
-#productList_products li {
+section {
+    padding: 0rem 1rem;
+}
+
+/*header*/
+
+main {
+    margin-top: 120px;
+}
+
+header {
+    background-color: #2d2d2d;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+header > h1 {
+    padding-left: 10px;
+}
+
+/*homeview*/
+
+#tutorList {
+    list-style: none;
+    padding-left: 0;
+}
+
+#tutorList li {
+    border-style: solid;
+    border-width: thin;
+    width: 50%;
+    margin: 0px 15px 15px 0px;
+    padding: 15px;
+    display:inline-block;
+    clear: both; 
+}
+
+#tutorList img {
+    float:left;
+    margin-right: 10px;
+}
+
+#tutorList h2 {
+    margin-top: 0px;
+}
+
+#tutorList p {
+    margin-top: 2rem;
+    font-size: .85rem;
+}
+
+#tutorList span {
+    background-color: #dddddd;
+    margin: .25rem;
+    padding: .5rem 1.5rem;
+    border-radius: 2rem;
+}
+
+#tutorList .btn-primary {
+    float:right;
+}
+
+/*calendar view*/
+
+
+
+/*buttons*/
+
+.btn-primary {
+    background-color:#569b84;
+    color: white;
+    border: none;
+    padding: .5rem 1.5rem;
+    font-size: 1rem;
+    border-radius: .5rem;
     cursor: pointer;
-    clear: both;
 }
 
-#productList_products li:hover {
-    text-decoration: underline;
+.btn-primary:hover {
+    background-color: #5496ad;
 }
 
-#productList_products span {
-    float: right;
+.btn-secondary {
+    background-color:#889daf;
+    color: white;
+    border: none;
+    padding: .5rem 1.5rem;
+    font-size: 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #5496ad;
 }

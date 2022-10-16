@@ -37,7 +37,17 @@
       <!-- Add container for list of profile cards (to be bound from code) -->
       <!-- and a template of a profile card (wrapped by a selectable template tag) inside container -->
       <h2>OUR TUTORS</h2>
-      <ul id="productList_products" class="list-group"></ul>
+      <ul id="tutorList" class="list-group">
+        <div></div>
+        <template>
+          <li>
+            <button type="button" class="btn-primary">View Schedule</button>
+            <img src="images/150.png" alt="Avatar"/>
+            <h2></h2>
+            <p></p>
+          </li>
+        </template>
+      </ul>
     </section>
     <section id="calendarView">
       <!-- h2 to be bound from code -->
@@ -46,6 +56,7 @@
       <!-- Give the second column of each row an id based on the day ("Monday", "Tuesday", etc.).  -->
       <!-- Button to return to list should call app.homeView.load() -->
       <h2>SCHEDULE FOR <span id="tutorDetails_name"></span></h2>
+      <p>Tutoring hours are Monday-Thursday from 5pm-7pm</p>
       <table id="weekly_schedule">
         <thead>
           <tr>
@@ -80,7 +91,7 @@
           </tr>
         </tbody>
       </table>
-      <button type="button" onclick="app.homeView.load()">
+      <button type="button" class="btn-secondary" onclick="app.homeView.load()">
         Return to List
       </button>
     </section>

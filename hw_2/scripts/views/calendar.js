@@ -37,6 +37,7 @@
                 else{
                     //add type button
                     let button = document.createElement("button");
+                    button.classList.add('btn-primary');
                     button.innerHTML = "Book Appointment";
                     button.onclick = () => app.appointmentView.load(tutorId,day);
                     tbody.append(button);

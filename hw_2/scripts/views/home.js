@@ -24,7 +24,35 @@
         load() {
             if(!isLoaded){
                 let tutors = app.scheduler.getTutors();
-                //html stuff CHANGE cointainer and template
+                
+                const list = document.querySelector('#tutorList');
+                const template = list.querySelector('template');
+                const li = list.querySelector('div'); //WHAT IS THIS
+
+                const fragment = document.createDocumentFragment();
+
+                tutors.forEach(tutor => {
+                    let clone = template.content.cloneNode(true);
+
+                    let name = clone.querySelector('h2');
+                    name.innerText = tutor.name;
+
+                    let skills = clone.querySelector('p');
+                    skills.innerHTML = tutor.skills.map(x => `<span>${x}</span>`).join('');
+
+                    let btn = clone.querySelector('button');
+                    btn.onclick = () => app.calendarView.load(tutor.tutorId);
+
+                    fragment.appendChild(clone);
+                });
+
+
+                li.appendChild(fragment);
+                isLoaded = true;
+                
+
+
+                /*
                 let fragment = document.createDocumentFragment();
 
                 tutors.forEach(tutor => {
@@ -40,8 +68,9 @@
                     fragment.appendChild(li);
                 });
                 
-                document.querySelector('#productList_products').appendChild(fragment);
+                document.querySelector('#tutorList').appendChild(fragment);
                 isLoaded = true;
+                */
             }
 
             app._changeView('homeView');
