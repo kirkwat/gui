@@ -3,10 +3,23 @@
     // The "scheduler" is in charge of managing tutor schedules.
 
     // set properties: id, name and skills
-    class Tutor {}
+    class Tutor {
+        constructor(tutorId, name, skills){
+            this.tutorId = tutorId;
+            this.name = name;
+            this.skills = skills;              
+        }
+    }
 
     // set properties: tutorId, day, name and notes
-    class Appointment {}
+    class Appointment {
+        constructor(tutorId, day, name, notes){
+            this.tutorId = tutorId;
+            this.day = day;
+            this.name = name;
+            this.notes = notes;              
+        }
+    }
 
     app.Tutor = Tutor;
     app.Appointment = Appointment;
@@ -22,14 +35,30 @@
     let appointments = [
         new Appointment(1, 'Monday', 'Sally', 'I need lots of Angular help!')
     ];
-
+    
     // Add the following methods to app.scheduler....
     // ** getTutors() - returns all tutors
-    // ** getTutor(tutorId) - return tutor with given Id
+    // ** getTutor(tutorId) - use array's find() method to return tutor with the passed in tutorId
     // ** getAppointments() - return all appointments
-    // ** getAppointment(tutorId, day) - return all appointments for given tutor and day
-    // ** saveAppointment(appt) - add passed appointment to local variable
+    // ** getAppointment(tutorId, day) - use array's find() method to return appointment for given tutorId and day
+    // ** saveAppointment(appt) - use array's push() method to add passed in appointment to local variable
 
-    app.scheduler = {};
+    app.scheduler = {
+        getTutors() {
+            return tutors;
+        },
+        getTutor(tutorId) {
+            return tutors.find(x => x.tutorId === tutorId);
+        },
+        getAppointments() {
+            return appointments;
+        },
+        getAppointment(tutorId, day) {
+            return tutors.find(x => x.tutorId === tutorId && x.day === day);
+        },
+        saveAppointment(appt){
+            appointments.push(appt);
+        }
+    };
 
 })(app || (app = {}));

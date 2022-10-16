@@ -12,6 +12,9 @@
 
   <!-- Go out to https://fonts.google.com/ and follow instructions to use font 'Source Sans Pro'-->
   <!-- You will need to add your reference to google's font api before your local stylesheet. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">  
   
   <link rel="stylesheet" href="style.css" />
 
@@ -33,6 +36,7 @@
     <section id="homeView">
       <!-- Add container for list of profile cards (to be bound from code) -->
       <!-- and a template of a profile card (wrapped by a selectable template tag) inside container -->
+      <h2>Our Tutors</h2>
     </section>
     <section id="calendarView">
       <!-- h2 to be bound from code -->
@@ -40,11 +44,13 @@
       <!-- with a row in the tbody for each day (Monday-Thursday). -->
       <!-- Give the second column of each row an id based on the day ("Monday", "Tuesday", etc.).  -->
       <!-- Button to return to list should call app.homeView.load() -->
+      
     </section>
     <section id="appointmentView">
       <!-- Form to collect name (input) and notes (textarea) goes here -->
       <!-- Cancel button calls app.homeView.load() -->
       <!-- Book button calls app.appointmentView.save() -->
+      <h2>NEW APPOINTMENT</h2>
     </section>
   </main>
 </body>
