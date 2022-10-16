@@ -36,7 +36,8 @@
     <section id="homeView">
       <!-- Add container for list of profile cards (to be bound from code) -->
       <!-- and a template of a profile card (wrapped by a selectable template tag) inside container -->
-      <h2>Our Tutors</h2>
+      <h2>OUR TUTORS</h2>
+      <ul id="productList_products" class="list-group"></ul>
     </section>
     <section id="calendarView">
       <!-- h2 to be bound from code -->
@@ -44,13 +45,62 @@
       <!-- with a row in the tbody for each day (Monday-Thursday). -->
       <!-- Give the second column of each row an id based on the day ("Monday", "Tuesday", etc.).  -->
       <!-- Button to return to list should call app.homeView.load() -->
-      
+      <h2>SCHEDULE FOR <span id="tutorDetails_name"></span></h2>
+      <table id="weekly_schedule">
+        <thead>
+          <tr>
+            <td>Day</td>
+            <td>Availability</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td id="Monday">
+              <a href="#"></a>
+            </td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td id="Tuesday">
+              <a href="#"></a>
+            </td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td id="Wednesday">
+              <a href="#"></a>
+            </td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td id="Thursday">
+              <a href="#"></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" onclick="app.homeView.load()">
+        Return to List
+      </button>
     </section>
     <section id="appointmentView">
       <!-- Form to collect name (input) and notes (textarea) goes here -->
       <!-- Cancel button calls app.homeView.load() -->
       <!-- Book button calls app.appointmentView.save() -->
       <h2>NEW APPOINTMENT</h2>
+      <form>
+        <div class="form-field required">
+          <label for=userName>Name</label>
+          <input type="text" id="userName" name="userName" />
+        </div>
+        <div class="form-field required">
+          <label for="message">Message</label>
+          <input type="text" id="message" name="message" />
+        </div>
+        <button type="button" onclick="app.homeView.load()">Cancel</button>
+        <button type="button"  onclick="app.appointmentView.save()">Book</button>
+      </form>
     </section>
   </main>
 </body>

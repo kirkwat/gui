@@ -20,6 +20,32 @@
     //                  - append clone to profiles container
     //            - set isLoaded to true so the const list does not have to be loaded again 
     //      - invoke app._changeView to show homeView (regardless of isLoaded status)
-    app.homeView = {}
+    app.homeView = {
+        load() {
+            if(!isLoaded){
+                let tutors = app.scheduler.getTutors();
+                //html stuff CHANGE cointainer and template
+                let fragment = document.createDocumentFragment();
+
+                tutors.forEach(tutor => {
+                    let li = document.createElement('li');
+                    li.innerText = tutor.name;
+                    li.classList.add('list-group-item');
+                    li.onclick = () => app.calendarView.load(tutor.tutorId);
+
+                    let skills = document.createElement('span');
+                    skills.innerText = `${tutor.skills}`;
+                    li.appendChild(skills);
+    
+                    fragment.appendChild(li);
+                });
+                
+                document.querySelector('#productList_products').appendChild(fragment);
+                isLoaded = true;
+            }
+
+            app._changeView('homeView');
+        }
+    }
 
 })(app || (app = {}));

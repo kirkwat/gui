@@ -16,6 +16,36 @@
     //                      - button should call app.appointmentView.load() when clicked and pass the tutorId and day
     //                      - make sure your button has a type of "button" to prevent the page from relaoding
     //      - invoke app._changeView to show calendarView
-    app.calendarView = {};
+    app.calendarView = {
+        load(tutorId) {
+            selectedTutor = app.scheduler.getTutor(tutorId);
+
+            document.querySelector('#tutorDetails_name').innerText = selectedTutor.name.toUpperCase();
+            const table = document.querySelector('#weekly_schedule');
+
+            days.forEach(day => {
+                let appointment = app.scheduler.getAppointment(tutorId, day);
+
+                const tbody = table.querySelector('#'+day);
+
+                tbody.innerHTML='';
+
+                if(appointment){  
+                    tbody.innerText =appointment.name;
+
+                }
+                else{
+                    //add type button
+                    let button = document.createElement("button");
+                    button.innerHTML = "Book Appointment";
+                    button.onclick = () => app.appointmentView.load(tutorId,day);
+                    tbody.append(button);
+                }
+
+            });
+
+            app._changeView('calendarView');
+        }
+    };
 
 })(app || (app = {}));

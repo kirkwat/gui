@@ -1,6 +1,6 @@
 (app => {
 
-    let selected;
+    let selected = [];
 
     // Add the following methods to app.appointmentView....
     // ** load(tutorId, day)
@@ -12,6 +12,25 @@
     //      - pass appointment to app.scheduler.saveAppointment
     //      - clear the two form element values
     //      - navigate back to calendar using app.calendarView.load with the selected tutorId
-    app.appointmentView = {};
+    app.appointmentView = {
+        load(tutorId, day) {
+            selected.push(tutorId);
+            selected.push(day);
+            app._changeView('appointmentView');
+        },
+        save(){
+            let nameInput = document.querySelector('#userName');
+            let messageInput = document.querySelector('#message');
+
+            let appt = new app.Appointment(selected[0],selected[1],nameInput.value,messageInput.value);
+            app.scheduler.saveAppointment(appt);
+
+            nameInput.value = "";
+            messageInput.value = "";
+
+            app.calendarView.load(selected[0]);
+            selected.length = 0;
+        }
+    };
 
 })(app || (app = {}));

@@ -54,7 +54,7 @@
             return appointments;
         },
         getAppointment(tutorId, day) {
-            return tutors.find(x => x.tutorId === tutorId && x.day === day);
+            return appointments.find(x => x.tutorId === tutorId && x.day === day);
         },
         saveAppointment(appt){
             appointments.push(appt);
