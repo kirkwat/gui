@@ -29,7 +29,7 @@ header > h1 {
     padding-left: 10px;
 }
 
-/*homeview*/
+/*home view*/
 
 #tutorList {
     list-style: none;
@@ -73,7 +73,50 @@ header > h1 {
 
 /*calendar view*/
 
+#weekly_schedule {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid black;
+}
 
+#weekly_schedule thead {
+    background: #999999;
+    color: #FFF;
+}
+
+#weekly_schedule td {
+    padding: 1rem 1rem;
+}
+
+.text-secondary {
+    color: #6c757d;
+}
+
+/*appointment view*/
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form input, textarea {
+    width: 100%;
+    padding: .5rem .75rem;
+    border: solid 1px #6c757d;
+}
+
+.form-field {
+    margin-bottom: .5rem;
+}
+
+form button {
+    width: 100%;
+    margin: .5rem 0rem;
+}
+
+#userName:focus, #message:focus {
+    outline: 2px solid #c4e4fc;
+}
 
 /*buttons*/
 

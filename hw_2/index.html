@@ -101,16 +101,16 @@
       <!-- Book button calls app.appointmentView.save() -->
       <h2>NEW APPOINTMENT</h2>
       <form>
-        <div class="form-field required">
-          <label for=userName>Name</label>
+        <div class="form-field ">
+          <label for=userName class="text-secondary">Name</label>
           <input type="text" id="userName" name="userName" />
         </div>
-        <div class="form-field required">
-          <label for="message">Message</label>
-          <input type="text" id="message" name="message" />
+        <div class="form-field">
+          <label for="message" class="text-secondary">Message</label>
+          <textarea type="text" id="message" name="message" rows="10"></textarea>
         </div>
-        <button type="button" onclick="app.homeView.load()">Cancel</button>
-        <button type="button"  onclick="app.appointmentView.save()">Book</button>
+        <button type="button" class="btn-secondary" onclick="app.homeView.load()">Cancel</button>
+        <button type="button"  class="btn-primary" onclick="app.appointmentView.save()">Book</button>
       </form>
     </section>
   </main>

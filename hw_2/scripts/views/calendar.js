@@ -31,8 +31,8 @@
                 tbody.innerHTML='';
 
                 if(appointment){  
-                    tbody.innerText =appointment.name;
-
+                    tbody.innerHTML = `<div>${appointment.name}</div>`;
+                    tbody.innerHTML += `<div class="text-secondary">${appointment.notes}</div>`;
                 }
                 else{
                     //add type button
