@@ -27,7 +27,7 @@
                 
                 const list = document.querySelector('#tutorList');
                 const template = list.querySelector('template');
-                const li = list.querySelector('div'); //WHAT IS THIS
+                const li = list.querySelector('div');
 
                 const fragment = document.createDocumentFragment();
 
@@ -49,28 +49,6 @@
 
                 li.appendChild(fragment);
                 isLoaded = true;
-                
-
-
-                /*
-                let fragment = document.createDocumentFragment();
-
-                tutors.forEach(tutor => {
-                    let li = document.createElement('li');
-                    li.innerText = tutor.name;
-                    li.classList.add('list-group-item');
-                    li.onclick = () => app.calendarView.load(tutor.tutorId);
-
-                    let skills = document.createElement('span');
-                    skills.innerText = `${tutor.skills}`;
-                    li.appendChild(skills);
-    
-                    fragment.appendChild(li);
-                });
-                
-                document.querySelector('#tutorList').appendChild(fragment);
-                isLoaded = true;
-                */
             }
 
             app._changeView('homeView');
