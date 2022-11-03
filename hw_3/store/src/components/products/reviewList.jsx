@@ -1,14 +1,41 @@
-//update for review values
-//add if there are no reviews
+//fix styling
 
-export const ReviewList = ({ reviews }) =>
-    <ul className="list-group mt-4 mb-4">
-        {
-            reviews.map((review, index) =>
-                <li key={index} className="list-group-item">
-                    {review.userName}
-                    <span className="float-end badge bg-primary">{review.comment}</span>
-                    <span className="clearfix"></span>
-                </li>)
-        }
-    </ul>;
+import { Rating } from "../common";
+
+export const ReviewList = ({ reviews }) => {
+
+    if(reviews.length === 0) {
+        return <>
+            <h2>Product Reviews
+                <span className="text-secondary"> ({reviews.length})</span>
+            </h2>
+            <p>Be the first to add a review!</p>
+        </>
+    }
+
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+
+    return <>
+        <h4>Product Reviews
+            <span className="text-secondary"> ({reviews.length})</span>
+        </h4>
+
+        <ul className="list-group">
+            {
+                reviews.map((review, index) =>
+
+                    <div key={index} className="card">
+                        <div className="card-header">
+                            <Rating value={review.rating} className="d-inline-flex"/>
+                        </div>
+                        <div className="card-body">
+                            <p className="card-text text-secondary float-end">{new Date(review.date).toLocaleDateString('en-US',options)}</p>
+                            <p className="card-text text-secondary">{review.userName}</p>
+                            <p className="card-text">"{review.comment}"</p>
+                        </div>
+                    </div>
+                )
+            }
+        </ul>
+    </>;
+};
