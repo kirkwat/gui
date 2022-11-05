@@ -1,5 +1,3 @@
-//fix errors in console
-
 import { useState, useEffect } from "react";
 import { getProductById } from "../../api";
 import { ReviewForm } from "./reviewForm";

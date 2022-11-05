@@ -1,5 +1,3 @@
-//fix rating option thing
-
 import { useState } from "react";
 import { SelectField, TextField, TextAreaField, Rating } from "../common";
 import { ProductReview } from "../../models";
@@ -16,7 +14,6 @@ export const ReviewForm = ({ onReviewAdded }) => {
     const [ newUserName, setNewUserName ] = useState('');
     const [ newRating, setNewRating ] = useState('');
     const [ newComment, setNewComment ] = useState('');
-    //const [ ratingOptions ] = useState('');
 
     return <>
         <ul className="list-group">
@@ -34,7 +31,9 @@ export const ReviewForm = ({ onReviewAdded }) => {
                         <SelectField label="Rating"
                                 value={newRating}
                                 setValue={setNewRating}
-                                options={[1,2,3,4,5]} />
+                                options={ratingOptions}
+                                optionValueKey="value"
+                                optionLabelKey="label" />
                     </div>
                     <div className="col-3 mt-4">
                         <Rating value={newRating}/>
