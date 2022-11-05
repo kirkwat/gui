@@ -1,30 +1,28 @@
-//fix styling
-
 import { Rating } from "../common";
 
 export const ReviewList = ({ reviews }) => {
 
     if(reviews.length === 0) {
         return <>
-            <h2>Product Reviews
+            <h3>Product Reviews
                 <span className="text-secondary"> ({reviews.length})</span>
-            </h2>
-            <p>Be the first to add a review!</p>
+            </h3>
+            <p className="bg-light rounded p-3">Be the first to add a review!</p>
         </>
     }
 
     const options = { year: 'numeric', month: 'short', day: 'numeric' };
 
     return <>
-        <h4>Product Reviews
+        <h3>Product Reviews
             <span className="text-secondary"> ({reviews.length})</span>
-        </h4>
+        </h3>
 
         <ul className="list-group">
             {
                 reviews.map((review, index) =>
 
-                    <div key={index} className="card">
+                    <div key={index} className="card mb-3">
                         <div className="card-header">
                             <Rating value={review.rating} className="d-inline-flex"/>
                         </div>

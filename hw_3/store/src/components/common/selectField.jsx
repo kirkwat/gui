@@ -4,7 +4,7 @@ export const SelectField = ({ label, value, setValue, options, optionValueKey, o
         <select
             name="value"
             id="value"
-            className="form-control"
+            className="form-control form-select"
             value={value}
             onChange={event => setValue(event.target.value)}>
                 { !hideBlankOption && <option></option> }

@@ -1,4 +1,3 @@
-//fix styling
 //fix rating option thing
 
 import { useState } from "react";
@@ -20,12 +19,12 @@ export const ReviewForm = ({ onReviewAdded }) => {
     //const [ ratingOptions ] = useState('');
 
     return <>
-        <ul className="list-group mt-4 mb-4">
-            <li className="list-group-item active">
-                Add Review
+        <ul className="list-group">
+            <li className="list-group-item bg-secondary text-white">
+                <h5 className="mb-1">Add Review</h5>
             </li>
             <li className="list-group-item">
-                <div className="row">
+                <div className="row mt-2">
                     <div className="col-6">
                         <TextField label="Your Name"
                                     value={newUserName}
@@ -37,16 +36,16 @@ export const ReviewForm = ({ onReviewAdded }) => {
                                 setValue={setNewRating}
                                 options={[1,2,3,4,5]} />
                     </div>
-                    <div className="col-3">
-                            <Rating value={newRating} className=""/>
-                        </div>
+                    <div className="col-3 mt-4">
+                        <Rating value={newRating}/>
+                    </div>
                     <div className="col-12">
                         <TextAreaField label="Comment"
                                     value={newComment}
                                     setValue={setNewComment} />
                     </div>
                 </div>
-                <div className="row">
+                <div className="row mb-2">
                     <div className="col-12">
                         <button type="button" className="btn btn-primary"
                             onClick={ () => {
@@ -61,7 +60,5 @@ export const ReviewForm = ({ onReviewAdded }) => {
                 </div>
             </li>
         </ul>
-    
-    
     </>;
 }
