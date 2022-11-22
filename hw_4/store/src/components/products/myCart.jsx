@@ -25,15 +25,11 @@ export const MyCart = () => {
                             <td className="text-end">${item.totalPrice}</td>
                         </tr>)
                     }
-                    <tr className="border-white">
-                        <td/>
-                        <td/>
-                        <td className="fw-bold text-end">
-                            ${cartContext.cart.total}
-                        </td>
-                    </tr>
                 </tbody>
             </table>
+            <div className="fw-bold text-end pe-2">
+                ${cartContext.cart.total}
+            </div>
         </div>
     </>;
 };
