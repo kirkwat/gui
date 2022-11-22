@@ -1,12 +1,11 @@
-//TODO get buttons to bottom of card
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { getProducts } from "../../api";
 import { CartContext } from "../../context";
 
 export const ProductList = () => {
 
+    const cartContext = useContext(CartContext);
     const [ products, setProducts ] = useState(undefined);
 
     useEffect(() => {
@@ -33,16 +32,15 @@ export const ProductList = () => {
                                     ${product.price}
                                 </span>
                             </div>
-                            <div className="card-body pt-4">
+                            <div className="card-body pt-4 d-flex flex-column">
                                 <h4 className="card-title text-center">{product.name}</h4>
-                                <div className="row g-2 align-items-end">
+                                <div className="row g-2 mt-auto">
                                     <Link to={`products/${product.id}`} className="btn btn-info text-white">
                                         Product Details
                                     </Link>
-                                    <Link to={`products/${product.id}`} 
+                                    <Link to={`/cart`} 
                                         className="btn btn-warning"
-                                        onClick={() => CartContext.addToCart(product)}
-                                        >
+                                        onClick={() => cartContext.addToCart(product)}>
                                         Add to Cart
                                     </Link>
                                 </div>
@@ -53,6 +51,5 @@ export const ProductList = () => {
             }
             </div>
         </div>
-        {console.log(CartContext)}
     </>;
 };

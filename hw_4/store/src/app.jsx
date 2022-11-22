@@ -1,8 +1,3 @@
-//TODO make cart page
-//TODO get context working
-//TODO update profiledetails page (atc and add reviews)
-//TODO get buttons to bottom of card
-
 import { Link, Routes, Route, BrowserRouter } from "react-router-dom";
 import { MyRoutes } from './routes';
 import { CartContextProvider } from './context';

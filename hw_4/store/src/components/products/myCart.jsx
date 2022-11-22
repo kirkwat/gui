@@ -1,27 +1,39 @@
+import { useContext } from "react";
 import { CartContext } from "../../context";
 
 export const MyCart = () => {
 
+    const cartContext = useContext(CartContext);
 
     return <>
-        <table className="table table-condensed table-striped">
-            <thead>
-                <tr>
-                    <th>Qty</th>
-                    <th>Product</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    CartContext.cart.map(account => <tr key={account.id}>
-                        <td>
+        <div className="container">
+            <table className="table table-condensed table-striped">
+                <thead>
+                    <tr>
+                        <th>Qty</th>
+                        <th>Product</th>
+                        <th className="text-end">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        cartContext.cart.items.map(item => <tr key={item.product.id}>
+                            <td>{item.quantity}</td>
+                            <td>{item.product.name} - 
+                                <span className="text-secondary"> ${item.product.price}/each</span>
+                            </td>
+                            <td className="text-end">${item.totalPrice}</td>
+                        </tr>)
+                    }
+                    <tr className="border-white">
+                        <td/>
+                        <td/>
+                        <td className="fw-bold text-end">
+                            ${cartContext.cart.total}
                         </td>
-                        <td>{account.email}</td>
-                        <td>{account.isEmployee ? "Yes" : "No "}</td>
-                    </tr>)
-                }
-            </tbody>
-        </table>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </>;
 };

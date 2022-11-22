@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getProductById } from "../../api";
+import { getProductById, addReview } from "../../api";
+import { CartContext } from "../../context";
 import { ReviewForm } from "./reviewForm";
 import { ReviewList } from './reviewList';
 
 export const ProductDetails = () => {
 
     const params = useParams();
+    const cartContext = useContext(CartContext);
 
     const [ product, setProduct ] = useState(undefined);
 
@@ -14,7 +16,12 @@ export const ProductDetails = () => {
         getProductById(params.productId).then(x => setProduct(x));
     }, []);
 
-    const mergeProduct = delta => setProduct({ ...product, ...delta });
+    const onReviewAdded = review => {
+        const _product = {...product};
+        _product.reviews.push(review);
+        setProduct(_product);
+        addReview(product.id, review);
+    }
 
     if(!product) {
         return <>Loading...</>;
@@ -41,11 +48,16 @@ export const ProductDetails = () => {
                         <h1 className="display-4">{product.name}</h1>
                         <h3><span className="badge bg-primary">${product.price}</span></h3>
                         <p className="lead pt-2">{product.description}</p>
+                        <Link to={`/cart`} 
+                            className="btn btn-warning float-end"
+                            onClick={() => cartContext.addToCart(product)}>
+                                Add to Cart
+                            </Link>
                     </div>
                 </div>
             </div>
             <ReviewList reviews={product.reviews} />
-            <ReviewForm onReviewAdded={ review => mergeProduct({ reviews: [...product.reviews, review]})} />
+            <ReviewForm onReviewAdded={ review => onReviewAdded(review)} />
         </div>
     </>;
 };
