@@ -1,14 +1,7 @@
-//TODO update with array
+import { ProductList, ProductDetails, MyCart } from "./components";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ProductList, ProductDetails, MyCart } from "..";
-
-export const Router = () => {
-    return <BrowserRouter>
-        <Routes>
-            <Route path="/" element={ <ProductList /> } exact />
-            <Route path="/products/:productId" element={ <ProductDetails />} />
-            <Route path="cart" element={ <MyCart />} />
-        </Routes>
-    </BrowserRouter>
-};
+export const MyRoutes = () => [
+    { path: '', element: <ProductList />},
+    { path: '/products/:productId', element: <ProductDetails />},
+    { path: 'cart', element: <MyCart />}
+];
