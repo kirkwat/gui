@@ -6,9 +6,6 @@ export const CartContextProvider = ({ children }) => {
 
     const [ cart, setCart ] = useState({items:[],total:0});
 
-    //TODO MAYBE DELETE
-    //const context = useMemo(() => ({ userName, setUserName }), [ userName ]);
-
     const addToCart = (product) => {
         let _cart={...cart};
         let existing = _cart.items.find(x=>x.product.id===product.id);
@@ -24,8 +21,7 @@ export const CartContextProvider = ({ children }) => {
         setCart(_cart);
     }
 
-    return <CartContext.Provider value={context}>
-        {/*TODO: Set value prop of CartContext.Provider */}
+    return <CartContext.Provider value={{cart,addToCart}}>
         { children }
     </CartContext.Provider>
 }

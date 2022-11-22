@@ -1,3 +1,3 @@
-import { ProductDetails } from './components';
+import { ProductList } from './components';
 
-export const App = () => <ProductDetails />;
+export const App = () => <ProductList />;
